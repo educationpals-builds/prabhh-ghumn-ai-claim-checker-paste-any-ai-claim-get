@@ -1,0 +1,68 @@
+{
+  "verificationToken": "01KYQWQK7T61RRBQDPA4PC42Y7",
+  "courseId": "88eb74ce-fea8-5e61-bad0-feac40ffdddf",
+  "chapterId": "a00976fe-2735-4803-8900-bdffd1c903f8",
+  "templateId": "baw_c001_ch01",
+  "variants": [
+    {
+      "id": "README.md",
+      "path": "README.md"
+    },
+    {
+      "id": "charter.md",
+      "path": "charter.md"
+    },
+    {
+      "id": "blueprints/claim-checker.md",
+      "path": "blueprints/claim-checker.md"
+    },
+    {
+      "id": "prompts/claim-check-pack.md",
+      "path": "prompts/claim-check-pack.md"
+    },
+    {
+      "id": "METHOD.md",
+      "path": "METHOD.md"
+    },
+    {
+      "id": "VERIFY.md",
+      "path": "VERIFY.md"
+    },
+    {
+      "id": ".ep/provenance.json",
+      "path": ".ep/provenance.json.md"
+    },
+    {
+      "id": "skills/claim-advisor.skill.md",
+      "path": "skills/claim-advisor.skill.md"
+    },
+    {
+      "id": "data/seeded-claims.md",
+      "path": "data/seeded-claims.md"
+    },
+    {
+      "id": "tests/probe-board.md",
+      "path": "tests/probe-board.md"
+    },
+    {
+      "id": "tests/pass-gate.md",
+      "path": "tests/pass-gate.md"
+    },
+    {
+      "id": "tests/probes.jsonl",
+      "path": "tests/probes.jsonl"
+    },
+    {
+      "id": "tests/run-local.md",
+      "path": "tests/run-local.md"
+    },
+    {
+      "id": "STORY.md",
+      "path": "STORY.md"
+    }
+  ],
+  "totalScore": null,
+  "verdict": null,
+  "compiledAt": "2026-07-29T21:33:16.922Z",
+  "compositionMode": "shipgen"
+}
