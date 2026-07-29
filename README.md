@@ -1,36 +1,79 @@
-# Education Pals Build Pack
+# AI Claim Checker
 
-- Course: `88eb74ce-fea8-5e61-bad0-feac40ffdddf`
-- Chapter: `a00976fe-2735-4803-8900-bdffd1c903f8`
-- Template: `baw_c001_ch01`
-- Compiled: 2026-07-29T21:33:16.922Z
-- Verification token: `01KYQWQK7T61RRBQDPA4PC42Y7`
-- Composition mode: `shipgen`
-- Workshop publication: `01KYQWQJFXSVMJJV32J692D7MQ`
-- Proof challenge: `4a4a0a999d1a4665f45fa4c49e52a9d3`
-- Artifact type: `baw.v3`
-- Repository: https://github.com/educationpals-builds/prabhh-ghumn-ai-claim-checker-paste-any-ai-claim-get
+A five-filter credibility checker for AI claims. Paste any claim, get a structured read.
 
-## Variants
+## How This Checker Was Built
 
-- `README.md` → `README.md`
-- `charter.md` → `charter.md`
-- `blueprints/claim-checker.md` → `blueprints/claim-checker.md`
-- `prompts/claim-check-pack.md` → `prompts/claim-check-pack.md`
-- `METHOD.md` → `METHOD.md`
-- `VERIFY.md` → `VERIFY.md`
-- `.ep/provenance.json` → `.ep/provenance.json.md`
-- `skills/claim-advisor.skill.md` → `skills/claim-advisor.skill.md`
-- `data/seeded-claims.md` → `data/seeded-claims.md`
-- `tests/probe-board.md` → `tests/probe-board.md`
-- `tests/pass-gate.md` → `tests/pass-gate.md`
-- `tests/probes.jsonl` → `tests/probes.jsonl`
-- `tests/run-local.md` → `tests/run-local.md`
-- `STORY.md` → `STORY.md`
+This checker was built through a structured workshop: pin a real claim, run it through five filters, call a verdict, then wire the judgment into a reusable tool. The worked example below is the builder's own run—their calibration is baked into the checker.
 
-## Files
+## Worked Example
 
-- `manifest.json` — verification manifest
-- `instructions.md` — paste tips per variant
+**The claim, verbatim:**
+
+> "The model achieves human-level performance on medical reasoning benchmarks, outperforming physicians on diagnostic vignettes."
+
+**Source:** University press release summarizing a preprint; benchmark details in appendix C
+
+**What this decides:** Six months of lab roadmap gets committed to this base model
+
+**Decision deadline:** Lab meeting, next Thursday
+
+**Source & incentives:** We will be able to use this in our company and reduce our dependence on human labor by 15% if we deploy it
+
+**Five-filter dial scores:**
+
+| Filter | Score (0–4) |
+|--------|-------------|
+| source_incentives | 0 |
+| reasoning_holds | 0 |
+| evidence_shown | 0 |
+| other_explanations | 0 |
+| survives_deployment | 0 |
+
+**Weakest filter:** reasoning_holds
+
+**Evidence note:** There is no evidence available yet. How do you suggest we test?
+
+**Verdict:** cant decide what to write here so I am going to skip this
+
+**Flip condition:** the evidence is false, then it would flip the read.
+
+**Sharpest question:** Is the data backed up by real world exeriments.
+
+See [charter.md](charter.md) for the full run record.
+
+## One-Paste Rebuild Block
+
+To rebuild this checker in any chat model:
+
+1. Copy the system instructions from [blueprints/claim-checker.md](blueprints/claim-checker.md)
+2. Paste into your model's system prompt
+3. Start a conversation with a claim to check
+
+The checker uses five filters:
+- **source_incentives** — Who benefits from this claim being believed?
+- **reasoning_holds** — Does the logic survive scrutiny?
+- **evidence_shown** — What's present vs. conspicuously missing?
+- **other_explanations** — What else could explain the result?
+- **survives_deployment** — Will this hold in real-world conditions?
+
+## Repository Structure
+
+- `charter.md` — The builder's full run: claim, stakes, dials, verdict
+- `blueprints/claim-checker.md` — One-paste system instructions for the checker
+- `prompts/claim-check-pack.md` — Five standalone prompts, one per filter
+- `METHOD.md` — The framework explained
+- `VERIFY.md` — How to verify this checker works
+- `skills/claim-advisor.skill.md` — Portable skill file for assistant runtimes
+- `data/seeded-claims.md` — Calibration record with seeded claims
+- `tests/probe-board.md` — All 8 probes with results
+- `tests/pass-gate.md` — The gate this checker must hold
+- `tests/probes.jsonl` — Machine-readable probe export
+- `tests/run-local.md` — Run-anywhere guide
+- `STORY.md` — The builder's story
+
+## Verification
+
+See [VERIFY.md](VERIFY.md) for how a stranger can verify this checker works as claimed.
 
 <!-- educationpals-build-verified -->
